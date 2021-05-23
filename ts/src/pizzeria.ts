@@ -1,15 +1,14 @@
-// klasa TS struktura
+// klasa TS - struktura
 export abstract class Pizzeria {
-
     //statyczne id
-    static id = 0;
-    id;
+    static id: number = 0;
+    id: number;
     //field - pola klasy
-    readonly name;
-    private _pizzasInOrder = [];
-    private _maxPizzaIsOven = 10;
-    private _recipes = [];
-    private _manager = 'Kamil';
+    readonly name: string;
+    private _pizzasInOrder: string[] = [];
+    private _maxPizzaIsOven: number = 10;
+    private _recipes:string[] = [];
+    private _manager: string = 'Kamil';
 
     // konstruktor parent
     constructor(name: string) {
@@ -18,6 +17,8 @@ export abstract class Pizzeria {
     }
 
     //gettery i settery
+
+
     get pizzasInOrder(): any[] {
         return this._pizzasInOrder;
     }
@@ -51,15 +52,15 @@ export abstract class Pizzeria {
     }
 
 //metody
-    order(pizza) {
+    order(pizza: string) {
         this._pizzasInOrder.push(pizza);
     }
 
-    private isOvenFull() {
+    private isOvenFull():boolean {
         return this._pizzasInOrder.length > this._maxPizzaIsOven;
     }
     // metoda abstrakcyjna tylko w klasie abstrakcyjnej
-    abstract bake()
+    abstract bake(): void
 
 }
 
