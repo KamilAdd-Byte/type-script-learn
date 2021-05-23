@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // klasa TS struktura
 var Pizzeria = /** @class */ (function () {
     // konstruktor
@@ -6,10 +21,11 @@ var Pizzeria = /** @class */ (function () {
         this._maxPizzaIsOven = 10;
         this._recipes = [];
         this._manager = 'Kamil';
+        this.id = Pizzeria.id++;
         this.name = name;
     }
     Object.defineProperty(Pizzeria.prototype, "pizzasInOrder", {
-        //getteri i settery
+        //gettery i settery
         get: function () {
             return this._pizzasInOrder;
         },
@@ -56,9 +72,21 @@ var Pizzeria = /** @class */ (function () {
     Pizzeria.prototype.isOvenFull = function () {
         return this._pizzasInOrder.length > this._maxPizzaIsOven;
     };
+    //statyczne id
+    Pizzeria.id = 0;
     return Pizzeria;
 }());
-var laStrada = new Pizzeria('La Strada');
+var PolishPizzeria = /** @class */ (function (_super) {
+    __extends(PolishPizzeria, _super);
+    function PolishPizzeria() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return PolishPizzeria;
+}(Pizzeria));
+var laStrada = new PolishPizzeria('La Strada');
+var americana = new PolishPizzeria('Americana');
+var hawajska = new PolishPizzeria('Hawajska');
 laStrada.order('Hawajska');
 laStrada.manager = 'Mas';
-console.log(laStrada);
+// wyświetlanie
+console.log(laStrada, americana, hawajska);
