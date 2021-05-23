@@ -1,0 +1,2 @@
+1. Otworzyæ konsolê w katalogu z t¹ instrukcj¹ i œci¹gn¹æ zale¿noœci poprzez komendê:
+"npm install" i poczekaæ a¿ pojawi siê folder NODE_MODULES

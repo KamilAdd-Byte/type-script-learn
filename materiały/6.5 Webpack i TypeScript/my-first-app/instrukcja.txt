@@ -1,0 +1,6 @@
+1. Otwórz konsolê w katalogu z t¹ instrukcj¹ i œci¹gn¹æ zale¿noœci poprzez komendê:
+"npm install" i poczekaj a¿ pojawi siê folder NODE_MODULES
+
+2. Wpisz w konsoli komendê "npm start" i poczekaæ a¿ skompiluje siê kod.
+
+3. PrzejdŸ do przegl¹darki i wpisz adres http://localhost:3000/ 
