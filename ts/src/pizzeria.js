@@ -86,10 +86,23 @@ var PolishPizzeria = /** @class */ (function (_super) {
     };
     return PolishPizzeria;
 }(Pizzeria));
+;
+var AmericanPizzeria = /** @class */ (function (_super) {
+    __extends(AmericanPizzeria, _super);
+    function AmericanPizzeria() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    AmericanPizzeria.prototype.bake = function () {
+        return 'pizza is being baked....wait!!!!';
+    };
+    return AmericanPizzeria;
+}(Pizzeria));
 var laStrada = new PolishPizzeria('La Strada');
 var americana = new PolishPizzeria('Americana');
 var hawajska = new PolishPizzeria('Hawajska');
+var diablo = new AmericanPizzeria('Diablo');
 laStrada.order('Hawajska');
 laStrada.manager = 'Mas';
+diablo.manager = 'Amerikan Psycho';
 // wyświetlanie
-console.log(laStrada, americana, hawajska);
+console.log(laStrada, americana, hawajska, diablo);

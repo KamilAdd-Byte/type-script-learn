@@ -67,15 +67,22 @@ class PolishPizzeria extends Pizzeria {
     bake() {
         return 'pizza is being baked';
     }
+};
+
+class AmericanPizzeria extends Pizzeria {
+    bake() {
+        return 'pizza is being baked....wait!!!!';
+    }
 }
 
 const laStrada = new PolishPizzeria('La Strada');
 const americana = new PolishPizzeria('Americana');
 const hawajska = new PolishPizzeria('Hawajska');
+const diablo = new AmericanPizzeria('Diablo');
 
 laStrada.order('Hawajska');
 laStrada.manager = 'Mas'
-
+diablo.manager='Amerikan Psycho';
 
 // wyświetlanie
-console.log(laStrada,americana,hawajska);
+console.log(laStrada,americana,hawajska,diablo);
