@@ -21,38 +21,53 @@ abstract class Pizzeria {
     get pizzasInOrder(): any[] {
         return this._pizzasInOrder;
     }
+
     set pizzasInOrder(value: any[]) {
         this._pizzasInOrder = value;
     }
+
     get maxPizzaIsOven(): number {
         return this._maxPizzaIsOven;
     }
+
     set maxPizzaIsOven(value: number) {
         this._maxPizzaIsOven = value;
     }
+
     get recipes(): any[] {
         return this._recipes;
     }
+
     set recipes(value: any[]) {
         this._recipes = value;
     }
+
     get manager(): string {
         return this._manager;
     }
+
     set manager(value: string) {
         this._manager = value;
     }
 
 //metoda
-    order(pizza){
+    order(pizza) {
         this._pizzasInOrder.push(pizza);
     }
-    private isOvenFull(){
+
+    private isOvenFull() {
         return this._pizzasInOrder.length > this._maxPizzaIsOven;
     }
+    // metoda abstrakcyjna tylko w klasie abstrakcyjnej
+    abstract bake()
+
 }
 
-class PolishPizzeria extends Pizzeria {}
+class PolishPizzeria extends Pizzeria {
+    bake() {
+        return 'pizza is being baked';
+    }
+}
 
 const laStrada = new PolishPizzeria('La Strada');
 const americana = new PolishPizzeria('Americana');

@@ -81,6 +81,9 @@ var PolishPizzeria = /** @class */ (function (_super) {
     function PolishPizzeria() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    PolishPizzeria.prototype.bake = function () {
+        return 'pizza is being baked';
+    };
     return PolishPizzeria;
 }(Pizzeria));
 var laStrada = new PolishPizzeria('La Strada');
