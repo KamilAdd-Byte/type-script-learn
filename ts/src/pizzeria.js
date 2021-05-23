@@ -1,18 +1,6 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Pizzeria = void 0;
 // klasa TS struktura
 var Pizzeria = /** @class */ (function () {
     // konstruktor parent
@@ -65,7 +53,7 @@ var Pizzeria = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    //metoda
+    //metody
     Pizzeria.prototype.order = function (pizza) {
         this._pizzasInOrder.push(pizza);
     };
@@ -76,35 +64,4 @@ var Pizzeria = /** @class */ (function () {
     Pizzeria.id = 0;
     return Pizzeria;
 }());
-var PolishPizzeria = /** @class */ (function (_super) {
-    __extends(PolishPizzeria, _super);
-    function PolishPizzeria(name, openAtNight) {
-        var _this = _super.call(this, name) || this;
-        _this.openAtNight = openAtNight;
-        return _this;
-    }
-    PolishPizzeria.prototype.bake = function () {
-        return 'pizza is being baked';
-    };
-    return PolishPizzeria;
-}(Pizzeria));
-;
-var AmericanPizzeria = /** @class */ (function (_super) {
-    __extends(AmericanPizzeria, _super);
-    function AmericanPizzeria() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    AmericanPizzeria.prototype.bake = function () {
-        return 'pizza is being baked....wait!!!!';
-    };
-    return AmericanPizzeria;
-}(Pizzeria));
-var laStrada = new PolishPizzeria('La Strada', true);
-var americana = new PolishPizzeria('Americana', false);
-var hawajska = new PolishPizzeria('Hawajska', true);
-var diablo = new AmericanPizzeria('Diablo');
-laStrada.order('Hawajska');
-laStrada.manager = 'Mas';
-diablo.manager = 'Amerikan Psycho';
-// wyświetlanie
-console.log(laStrada, americana, hawajska, diablo);
+exports.Pizzeria = Pizzeria;

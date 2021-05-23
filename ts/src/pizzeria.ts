@@ -1,5 +1,5 @@
 // klasa TS struktura
-abstract class Pizzeria {
+export abstract class Pizzeria {
 
     //statyczne id
     static id = 0;
@@ -50,7 +50,7 @@ abstract class Pizzeria {
         this._manager = value;
     }
 
-//metoda
+//metody
     order(pizza) {
         this._pizzasInOrder.push(pizza);
     }
@@ -63,30 +63,7 @@ abstract class Pizzeria {
 
 }
 
-class PolishPizzeria extends Pizzeria {
 
-    constructor(name, public openAtNight) {
-        super(name);
-    }
-    bake() {
-        return 'pizza is being baked';
-    }
-};
 
-class AmericanPizzeria extends Pizzeria {
-    bake() {
-        return 'pizza is being baked....wait!!!!';
-    }
-}
 
-const laStrada = new PolishPizzeria('La Strada',true);
-const americana = new PolishPizzeria('Americana', false);
-const hawajska = new PolishPizzeria('Hawajska', true);
-const diablo = new AmericanPizzeria('Diablo');
 
-laStrada.order('Hawajska');
-laStrada.manager = 'Mas'
-diablo.manager='Amerikan Psycho';
-
-// wyświetlanie
-console.log(laStrada,americana,hawajska,diablo);
