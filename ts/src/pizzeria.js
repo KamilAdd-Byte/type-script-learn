@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 // klasa TS struktura
 var Pizzeria = /** @class */ (function () {
-    // konstruktor
+    // konstruktor parent
     function Pizzeria(name) {
         this._pizzasInOrder = [];
         this._maxPizzaIsOven = 10;
@@ -78,8 +78,10 @@ var Pizzeria = /** @class */ (function () {
 }());
 var PolishPizzeria = /** @class */ (function (_super) {
     __extends(PolishPizzeria, _super);
-    function PolishPizzeria() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function PolishPizzeria(name, openAtNight) {
+        var _this = _super.call(this, name) || this;
+        _this.openAtNight = openAtNight;
+        return _this;
     }
     PolishPizzeria.prototype.bake = function () {
         return 'pizza is being baked';
@@ -97,9 +99,9 @@ var AmericanPizzeria = /** @class */ (function (_super) {
     };
     return AmericanPizzeria;
 }(Pizzeria));
-var laStrada = new PolishPizzeria('La Strada');
-var americana = new PolishPizzeria('Americana');
-var hawajska = new PolishPizzeria('Hawajska');
+var laStrada = new PolishPizzeria('La Strada', true);
+var americana = new PolishPizzeria('Americana', false);
+var hawajska = new PolishPizzeria('Hawajska', true);
 var diablo = new AmericanPizzeria('Diablo');
 laStrada.order('Hawajska');
 laStrada.manager = 'Mas';

@@ -11,7 +11,7 @@ abstract class Pizzeria {
     private _recipes = [];
     private _manager = 'Kamil';
 
-    // konstruktor
+    // konstruktor parent
     constructor(name: string) {
         this.id = Pizzeria.id++;
         this.name = name
@@ -64,6 +64,10 @@ abstract class Pizzeria {
 }
 
 class PolishPizzeria extends Pizzeria {
+
+    constructor(name, public openAtNight) {
+        super(name);
+    }
     bake() {
         return 'pizza is being baked';
     }
@@ -75,9 +79,9 @@ class AmericanPizzeria extends Pizzeria {
     }
 }
 
-const laStrada = new PolishPizzeria('La Strada');
-const americana = new PolishPizzeria('Americana');
-const hawajska = new PolishPizzeria('Hawajska');
+const laStrada = new PolishPizzeria('La Strada',true);
+const americana = new PolishPizzeria('Americana', false);
+const hawajska = new PolishPizzeria('Hawajska', true);
 const diablo = new AmericanPizzeria('Diablo');
 
 laStrada.order('Hawajska');
