@@ -1,13 +1,16 @@
 // klasa TS - struktura
-export abstract class Pizzeria {
+import {Orderable} from "./orderable";
+import {Pizza} from "./pizza.model";
+
+export abstract class Pizzeria implements Orderable{
     //statyczne id
     static id: number = 0;
     id: number;
     //field - pola klasy
     readonly name: string;
-    private _pizzasInOrder: string[] = [];
+    private _pizzasInOrder: Pizza[] = [];   //zapis tablicy w TS
     private _maxPizzaIsOven: number = 10;
-    private _recipes:string[] = [];
+    private _recipes:string[] = [];          //zapis tablicy w TS
     private _manager: string = 'Kamil';
 
     // konstruktor parent
@@ -52,7 +55,7 @@ export abstract class Pizzeria {
     }
 
 //metody
-    order(pizza: string) {
+    order(pizza: Pizza) {
         this._pizzasInOrder.push(pizza);
     }
 

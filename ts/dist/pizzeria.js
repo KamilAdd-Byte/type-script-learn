@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pizzeria = void 0;
-// klasa TS - struktura
 var Pizzeria = /** @class */ (function () {
     // konstruktor parent
     function Pizzeria(name) {
-        this._pizzasInOrder = [];
+        this._pizzasInOrder = []; //zapis tablicy w TS
         this._maxPizzaIsOven = 10;
-        this._recipes = [];
+        this._recipes = []; //zapis tablicy w TS
         this._manager = 'Kamil';
         this.id = Pizzeria.id++;
         this.name = name;
