@@ -1,12 +1,10 @@
 import {Pizzeria} from "./pizzeria";
 
-export class PolishPizzeria extends Pizzeria {
-
+export class GermanyPizzeria extends Pizzeria{
     constructor(name: string, public openAtNight: boolean) {
         super(name);
     }
-
-    bake() {
-        return 'pizza is being baked';
+    bake(): string {
+        return 'still wait...';
     }
 }

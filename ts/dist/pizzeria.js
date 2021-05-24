@@ -56,6 +56,9 @@ var Pizzeria = /** @class */ (function () {
     Pizzeria.prototype.order = function (pizza) {
         this._pizzasInOrder.push(pizza);
     };
+    Pizzeria.prototype.changeStatus = function (index, status) {
+        this.pizzasInOrder[index].status = status;
+    };
     Pizzeria.prototype.isOvenFull = function () {
         return this._pizzasInOrder.length > this._maxPizzaIsOven;
     };

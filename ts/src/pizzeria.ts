@@ -1,6 +1,6 @@
 // klasa TS - struktura
 import {Orderable} from "./orderable";
-import {Pizza} from "./pizza.model";
+import {Pizza, Status} from "./pizza.model";
 
 export abstract class Pizzeria implements Orderable{
     //statyczne id
@@ -57,6 +57,10 @@ export abstract class Pizzeria implements Orderable{
 //metody
     order(pizza: Pizza) {
         this._pizzasInOrder.push(pizza);
+    }
+
+    changeStatus(index: number, status: Status){
+        this.pizzasInOrder[index].status = status;
     }
 
     private isOvenFull():boolean {
