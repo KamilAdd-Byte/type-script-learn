@@ -52,15 +52,18 @@ var Pizzeria = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    //metody
+    //metody - konstruowanie metod w TS
     Pizzeria.prototype.order = function (pizza) {
         this._pizzasInOrder.push(pizza);
+    };
+    Pizzeria.prototype.isOvenFull = function () {
+        return this._pizzasInOrder.length > this._maxPizzaIsOven;
     };
     Pizzeria.prototype.changeStatus = function (index, status) {
         this.pizzasInOrder[index].status = status;
     };
-    Pizzeria.prototype.isOvenFull = function () {
-        return this._pizzasInOrder.length > this._maxPizzaIsOven;
+    Pizzeria.prototype.changeSize = function (index, size) {
+        this.pizzasInOrder[index].size = size;
     };
     //statyczne id
     Pizzeria.id = 0;

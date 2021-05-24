@@ -9,7 +9,7 @@ const berlin = new GermanyPizzeria('Berlińska', false);
 const hawajska = new PolishPizzeria('Hawajska', true);
 const diablo = new AmericanPizzeria('Diablo');
 
-// dodawanie pizz z wykorzystaniem interfejsów i enumów i metod
+// dodawanie pizz z wykorzystaniem interfejsów, enumów i metod w TS
 // 1 tworzenie obiektu pizza
 const rzeznicka = {
     name: 'Rzeźnicka',
@@ -20,9 +20,7 @@ const rzeznicka = {
 // operowanie na obiekcie Pizzeria. Dodanie pizzy do zamówienia
 laStrada.order(rzeznicka);
 laStrada.changeStatus(0,Status.Baked);
-
-
-
+laStrada.changeSize(0,'large');
 
 // wyświetlanie
 console.log(laStrada,berlin,hawajska,diablo);

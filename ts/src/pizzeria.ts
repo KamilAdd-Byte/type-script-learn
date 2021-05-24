@@ -1,6 +1,8 @@
 // klasa TS - struktura
 import {Orderable} from "./orderable";
-import {Pizza, Status} from "./pizza.model";
+import {Pizza, SizePizza, Status} from "./pizza.model";
+
+type Size = 'small' | 'medium' | 'large';
 
 export abstract class Pizzeria implements Orderable{
     //statyczne id
@@ -54,18 +56,23 @@ export abstract class Pizzeria implements Orderable{
         this._manager = value;
     }
 
-//metody
+    //metody - konstruowanie metod w TS
     order(pizza: Pizza) {
         this._pizzasInOrder.push(pizza);
+    }
+
+    private isOvenFull():boolean {
+        return this._pizzasInOrder.length > this._maxPizzaIsOven;
     }
 
     changeStatus(index: number, status: Status){
         this.pizzasInOrder[index].status = status;
     }
 
-    private isOvenFull():boolean {
-        return this._pizzasInOrder.length > this._maxPizzaIsOven;
+    changeSize(index: number, size: Size) {
+        this.pizzasInOrder[index].size = size;
     }
+
     // metoda abstrakcyjna tylko w klasie abstrakcyjnej
     abstract bake(): void
 
