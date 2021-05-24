@@ -1,6 +1,6 @@
 export interface Pizza {
     name: string;
-    price: number;
+    price: number | string;
     size: string;
 }
 export enum Status {    //enum numeryczny

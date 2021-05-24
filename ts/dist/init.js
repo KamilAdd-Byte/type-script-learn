@@ -13,7 +13,7 @@ var diablo = new amerikan_pizzeria_1.AmericanPizzeria('Diablo');
 // 1 tworzenie obiektu pizza
 var rzeznicka = {
     name: 'Rzeźnicka',
-    price: 25,
+    price: 25.99,
     size: pizza_model_1.SizePizza.large,
     status: pizza_model_1.Status.Ordered
 };

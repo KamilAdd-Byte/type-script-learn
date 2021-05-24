@@ -13,7 +13,7 @@ const diablo = new AmericanPizzeria('Diablo');
 // 1 tworzenie obiektu pizza
 const rzeznicka = {
     name: 'Rzeźnicka',
-    price: 25,
+    price: 25.99,
     size: SizePizza.large,
     status: Status.Ordered
 }
