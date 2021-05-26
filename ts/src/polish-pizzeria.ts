@@ -1,4 +1,5 @@
 import {Pizzeria} from "./pizzeria";
+import {Pizza} from "./pizza.model";
 
 export class PolishPizzeria extends Pizzeria {
 
@@ -8,5 +9,9 @@ export class PolishPizzeria extends Pizzeria {
 
     bake() {
         return 'pizza is being baked';
+    }
+
+    order(pizza: Pizza) {
+        this._pizzasInOrder.push(pizza);
     }
 }

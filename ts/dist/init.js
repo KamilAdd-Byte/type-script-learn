@@ -14,7 +14,7 @@ var diablo = new amerikan_pizzeria_1.AmericanPizzeria('Diablo');
 var rzeznicka = {
     name: 'Rzeźnicka',
     price: 25.99,
-    size: pizza_model_1.SizePizza.large,
+    size: 'large',
     status: pizza_model_1.Status.Ordered
 };
 // operowanie na obiekcie Pizzeria. Dodanie pizzy do zamówienia
@@ -22,4 +22,4 @@ laStrada.order(rzeznicka);
 laStrada.changeStatus(0, pizza_model_1.Status.Baked);
 // wyświetlanie
 console.log(laStrada, berlin, hawajska, diablo);
-console.log(rzeznicka.name);
+console.log('Utworzona pizza: ' + rzeznicka);

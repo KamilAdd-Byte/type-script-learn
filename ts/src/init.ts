@@ -14,7 +14,7 @@ const diablo = new AmericanPizzeria('Diablo');
 const rzeznicka = {
     name: 'Rzeźnicka',
     price: 25.99,
-    size: SizePizza.large,
+    size: 'large' as SizePizza,
     status: Status.Ordered
 }
 // operowanie na obiekcie Pizzeria. Dodanie pizzy do zamówienia
@@ -27,4 +27,4 @@ laStrada.changeStatus(0,Status.Baked);
 // wyświetlanie
 console.log(laStrada,berlin,hawajska,diablo);
 
-console.log(rzeznicka.name);
+console.log('Utworzona pizza: '+ rzeznicka);

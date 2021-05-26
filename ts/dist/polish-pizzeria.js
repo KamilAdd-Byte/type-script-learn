@@ -27,6 +27,9 @@ var PolishPizzeria = /** @class */ (function (_super) {
     PolishPizzeria.prototype.bake = function () {
         return 'pizza is being baked';
     };
+    PolishPizzeria.prototype.order = function (pizza) {
+        this._pizzasInOrder.push(pizza);
+    };
     return PolishPizzeria;
 }(pizzeria_1.Pizzeria));
 exports.PolishPizzeria = PolishPizzeria;

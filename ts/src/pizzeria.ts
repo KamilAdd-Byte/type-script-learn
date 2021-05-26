@@ -8,7 +8,7 @@ export abstract class Pizzeria implements Orderable{
     id: number;
     //field - pola klasy
     readonly name: string;
-    private _pizzasInOrder: Pizza[] = [];   //zapis tablicy w TS
+    protected _pizzasInOrder: Pizza[] = [];   //zapis tablicy w TS
     private _maxPizzaIsOven: number = 10;
     private _recipes:string[] = [];          //zapis tablicy w TS
     private _manager: string = 'Kamil';
