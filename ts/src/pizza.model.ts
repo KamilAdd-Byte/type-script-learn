@@ -16,3 +16,4 @@ export enum SizePizza { //enum łańcuch znaków
 }
 
 export type SizeKey = keyof typeof SizePizza;
+

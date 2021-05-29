@@ -56,7 +56,8 @@ export abstract class Pizzeria implements Orderable{
         this._manager = value;
     }
 
-    //metody - konstruowanie metod w TS
+    // metody - konstruowanie metod w TS
+    // nazwa (zmienna: typ) {ciało metody}
     order(pizza: Pizza) {
         this._pizzasInOrder.push(pizza);
     }

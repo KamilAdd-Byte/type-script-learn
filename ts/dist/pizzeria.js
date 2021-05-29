@@ -52,7 +52,8 @@ var Pizzeria = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    //metody - konstruowanie metod w TS
+    // metody - konstruowanie metod w TS
+    // nazwa (zmienna: typ) {ciało metody}
     Pizzeria.prototype.order = function (pizza) {
         this._pizzasInOrder.push(pizza);
     };
