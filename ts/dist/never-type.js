@@ -1,5 +1,5 @@
 "use strict";
-//funkcje które nie zwracają nic nigdy to: 1. Niekończace sie petle i 2.funkcje ypu z rzuceniem errora
+//funkcje które nie zwracają nic nigdy to: 1. Niekończace sie petle i 2.funkcje typu z rzuceniem errora
 // sa to typy NEVER - nigdy nie wystąpią!
 var showError = function (message) {
     throw new Error(message);

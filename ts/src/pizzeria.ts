@@ -1,6 +1,6 @@
 // klasa TS - struktura
 import {Orderable} from "./orderable";
-import {Pizza, SizePizza, Status, SizeKey} from "./pizza.model";
+import {Pizza, SizePizza, Status, SizeKey, PaymentMethod} from "./pizza.model";
 
 type Size = 'small' | 'medium' | 'large';
 
@@ -83,6 +83,20 @@ export abstract class Pizzeria implements Orderable{
             console.log('price is number', price.toFixed());
         }
     }
+
+    // metoda TS parametr PaymentMethod a w jej ciele switch, który wykorzystuje nasz Union Type
+    // Discriminated Unions: 1. wyróżnik(typ) 2. alias (paymentMethod), 3. guard (switch)
+
+    getPaymentMethod(payment: PaymentMethod){
+        switch (payment.type){
+            case 'cash': return `Paid in cash i ${payment.currency}`
+            case 'debitCard': return `Paid with debit card code ${payment.code}`
+            case 'onlinePayment': return `Paid online, with bank account ${payment.bankAccount}`
+
+
+        }
+    }
+
     // metoda abstrakcyjna tylko w klasie abstrakcyjnej
     abstract bake(): void
 

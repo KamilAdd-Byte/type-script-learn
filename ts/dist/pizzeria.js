@@ -77,6 +77,15 @@ var Pizzeria = /** @class */ (function () {
             console.log('price is number', price.toFixed());
         }
     };
+    // metoda TS parametr PaymentMethod a w jej ciele switch, który wykorzystuje nasz Union Type
+    // Discriminated Unions: 1. wyróżnik(typ) 2. alias (paymentMethod), 3. guard (switch)
+    Pizzeria.prototype.getPaymentMethod = function (payment) {
+        switch (payment.type) {
+            case 'cash': return "Paid in cash i " + payment.currency;
+            case 'debitCard': return "Paid with debit card code " + payment.code;
+            case 'onlinePayment': return "Paid online, with bank account " + payment.bankAccount;
+        }
+    };
     //statyczne id
     Pizzeria.id = 0;
     return Pizzeria;
