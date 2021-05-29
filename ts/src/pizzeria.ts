@@ -73,6 +73,15 @@ export abstract class Pizzeria implements Orderable{
         this.pizzasInOrder[index].size = size;
     }
 
+    // #typeof documentation: https://www.typescriptlang.org/docs/handbook/2/typeof-types.html
+    //destrukturyzacja JS 6, pomaga rozbijać obiekt na klucze.  === -> operator RÓWNA SIĘ w TS: w Java ==.
+    checkPrice( { price }: Pizza) {
+        if (typeof price === 'string'){
+            console.log('price is string', price.toLowerCase())
+        } else if (typeof price === 'number'){
+            console.log('price is number', price.toFixed());
+        }
+    }
     // metoda abstrakcyjna tylko w klasie abstrakcyjnej
     abstract bake(): void
 

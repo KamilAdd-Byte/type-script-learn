@@ -4,4 +4,4 @@
 var mixins: [string,number,boolean] = ['John',36,false];
 
 //dodanie wartości do tablicy:
-mixins[3]= {a: 3};
+
