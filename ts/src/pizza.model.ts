@@ -1,7 +1,7 @@
 export interface Pizza {
     name: string;
     price: number | string;
-    size: string;
+    size: SizePizza;
 }
 export enum Status {    //enum numeryczny
     Ordered,
@@ -11,5 +11,8 @@ export enum Status {    //enum numeryczny
 export enum SizePizza { //enum łańcuch znaków
     small = 'small',
     medium = 'medium',
-    large = 'large'
+    large = 'large',
+    extra_large = 'extra-large'
 }
+
+export type SizeKey = keyof typeof SizePizza;

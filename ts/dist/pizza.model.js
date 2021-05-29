@@ -12,4 +12,5 @@ var SizePizza;
     SizePizza["small"] = "small";
     SizePizza["medium"] = "medium";
     SizePizza["large"] = "large";
+    SizePizza["extra_large"] = "extra-large";
 })(SizePizza = exports.SizePizza || (exports.SizePizza = {}));

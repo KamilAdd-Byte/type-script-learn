@@ -1,6 +1,6 @@
 // klasa TS - struktura
 import {Orderable} from "./orderable";
-import {Pizza, SizePizza, Status} from "./pizza.model";
+import {Pizza, SizePizza, Status, SizeKey} from "./pizza.model";
 
 type Size = 'small' | 'medium' | 'large';
 
@@ -69,7 +69,7 @@ export abstract class Pizzeria implements Orderable{
         this.pizzasInOrder[index].status = status;
     }
 
-    changeSize(index: number, size: Size) {
+    changeSize(index: number, size: SizeKey) {
         this.pizzasInOrder[index].size = size;
     }
 
