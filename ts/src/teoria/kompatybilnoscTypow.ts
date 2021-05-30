@@ -2,6 +2,7 @@ interface Manager {
     name: string;
     lastName: string;
 }
+// @ts-ignore
 let markTwain = {
     name: 'Mark',
     lastName: 'Twain',
@@ -9,7 +10,7 @@ let markTwain = {
 };
 
 function sayHello (person: Manager){
-    return 'Hello ,i am ${person.name}' + markTwain.name;
+    return `Hello ,i am ${person.name}` + markTwain.name;
 }
 
 /**
@@ -19,13 +20,6 @@ function sayHello (person: Manager){
 
 console.log(sayHello(markTwain));
 
-
-
-
-
-
-
-
-
- let seyHello = (name: string) => 'Hello ' + name;
+ // @ts-ignore
+let seyHello = (name: string) => 'Hello ' + name;
  console.log(seyHello("Kamil"));
