@@ -1,6 +1,10 @@
 interface Item {
     name: string;
 }
+interface Item {
+    code: string;
+}
+
 
 interface ProductsQueue<T> {
     //metoda w interfejsie przed zaimplementowaniem
@@ -28,12 +32,11 @@ class Queue<T extends Item> implements ProductsQueue<T>{
 
 interface ProductItem {
     id: number;
-    name: string;
 }
 // określenie typu w kaście <>
-const productItems = new Queue<ProductItem>();
-productItems.push( {id: 123,name:'MILK'} );
-productItems.push( {id: 3,name:'Chocolate'});
+const productItems = new Queue<ProductItem & Item>();
+productItems.push( {id: 123,name:'MILK',code: '4432'} );
+productItems.push( {id: 3,name:'Chocolate',code: '65WER'});
 
 console.log(productItems);
 

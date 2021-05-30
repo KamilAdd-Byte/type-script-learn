@@ -17,6 +17,6 @@ var Queue = /** @class */ (function () {
 }());
 // określenie typu w kaście <>
 var productItems = new Queue();
-productItems.push({ id: 123, name: 'MILK' });
-productItems.push({ id: 3, name: 'Chocolate' });
+productItems.push({ id: 123, name: 'MILK', code: '4432' });
+productItems.push({ id: 3, name: 'Chocolate', code: '65WER' });
 console.log(productItems);
