@@ -1,7 +1,9 @@
 ## type-script-learn
 
-Learn JS. Commit has polish description to easy learn.
+Learn Type script language programming. Commit has polish description to easily learn. 
 
 ## a source of learning
 
-www.strefakursow.pl - TS
+https://www.strefakursow.pl - TS
+
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html
