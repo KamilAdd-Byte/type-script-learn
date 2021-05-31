@@ -23,6 +23,4 @@ laStrada.changeStatus(0,Status.Baked);
 laStrada.changeSize(0,'large');
 
 // wyświetlanie
-console.log(laStrada,berlin,hawajska,diablo);
 
-console.log('Utworzona pizza: '+ rzeznicka);
