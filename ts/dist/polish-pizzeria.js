@@ -30,7 +30,19 @@ var pizzeria_1 = require("./pizzeria");
 function PizzaCreated(target) {
     console.log('Polish pizza has been created! ');
 }
-// Oznaczenie klasy adnotacją dekoratora PizzaCreated!
+// dekorator ustawiający w konstruktorze OpenAtNight na false.
+function ClosedAtNight(constructor) {
+    return /** @class */ (function (_super) {
+        __extends(class_1, _super);
+        function class_1() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.openNight = false;
+            return _this;
+        }
+        return class_1;
+    }(constructor));
+}
+// Oznaczenie klasy adnotacją dekoratora PizzaCreated! + ClosedAtNight
 var PolishPizzeria = /** @class */ (function (_super) {
     __extends(PolishPizzeria, _super);
     function PolishPizzeria(name, openAtNight) {
@@ -45,6 +57,7 @@ var PolishPizzeria = /** @class */ (function (_super) {
         this._pizzasInOrder.push(pizza);
     };
     PolishPizzeria = __decorate([
+        ClosedAtNight,
         PizzaCreated,
         __metadata("design:paramtypes", [String, Boolean])
     ], PolishPizzeria);

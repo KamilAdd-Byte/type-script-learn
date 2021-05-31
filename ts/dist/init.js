@@ -22,3 +22,4 @@ laStrada.order(rzeznicka);
 laStrada.changeStatus(0, pizza_model_1.Status.Baked);
 laStrada.changeSize(0, 'large');
 // wyświetlanie
+console.log(laStrada);

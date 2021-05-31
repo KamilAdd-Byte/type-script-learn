@@ -5,8 +5,16 @@ import {Pizza} from "./pizza.model";
 function PizzaCreated (target: Function){
     console.log('Polish pizza has been created! ')
 }
+// dekorator ustawiający w konstruktorze OpenAtNight na false.
+function ClosedAtNight<T extends {new (...args:any[]):{}}>(constructor: T){
+    return class extends constructor {
+        openNight = false;
+    }
+}
 
-// Oznaczenie klasy adnotacją dekoratora PizzaCreated!
+
+// Oznaczenie klasy adnotacją dekoratora PizzaCreated! + ClosedAtNight
+@ClosedAtNight
 @PizzaCreated
 export class PolishPizzeria extends Pizzeria {
 
