@@ -42,6 +42,12 @@ function ClosedAtNight(constructor) {
         return class_1;
     }(constructor));
 }
+// dekorator dla metody zawiera 3 elementy: 1target: any, 2propertyKey: string, 3propertyDescriptor: PropertyDescriptor
+function enumerable(value) {
+    return function (target, propertyKey, propertyDescriptor) {
+        propertyDescriptor.enumerable = value;
+    };
+}
 // Oznaczenie klasy adnotacją dekoratora PizzaCreated! + ClosedAtNight
 var PolishPizzeria = /** @class */ (function (_super) {
     __extends(PolishPizzeria, _super);
@@ -50,12 +56,19 @@ var PolishPizzeria = /** @class */ (function (_super) {
         _this.openAtNight = openAtNight;
         return _this;
     }
+    // dekorator nałożony na metodę.
     PolishPizzeria.prototype.bake = function () {
         return 'pizza is being baked';
     };
     PolishPizzeria.prototype.order = function (pizza) {
         this._pizzasInOrder.push(pizza);
     };
+    __decorate([
+        enumerable(false),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], PolishPizzeria.prototype, "bake", null);
     PolishPizzeria = __decorate([
         ClosedAtNight,
         PizzaCreated,
